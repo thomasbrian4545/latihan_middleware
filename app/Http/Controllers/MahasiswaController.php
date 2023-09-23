@@ -8,7 +8,7 @@ class MahasiswaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('coba')->except('tabelMahasiswa');
+        $this->middleware('coba')->only('daftarMahasiswa');
     }
 
     public function daftarMahasiswa()

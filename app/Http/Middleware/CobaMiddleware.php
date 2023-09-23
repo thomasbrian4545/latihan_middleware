@@ -13,9 +13,12 @@ class CobaMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        dd('CobaMiddleware aktif');
+        //dd('CobaMiddleware aktif');
+        if (time() % 2 == 0) {
+            return redirect('/tabel-mahasiswa');
+        }
         return $next($request);
     }
 }
