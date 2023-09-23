@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('coba')->except('tabelMahasiswa');
+    }
+
     public function daftarMahasiswa()
     {
         return 'Form pendaftaran mahasiswa';
